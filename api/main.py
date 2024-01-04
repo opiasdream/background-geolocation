@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.post("/addLocation")
 def add_location(location: dict):
-    f = open("locations.txt", "a+")
+    f = open("location_logs.txt", "a+")
     f.write(f"\n\n*******  {datetime.fromisoformat(str(location['location']['timestamp']).replace("Z", "+00:00"))} \n\n " + str(location))
     f.close()
     return {"message": "Location added"}

@@ -15,13 +15,14 @@ class CompanyInfoDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog.adaptive(
-      insetPadding: const EdgeInsets.all(0),
       content: Center(
+        heightFactor: 1,
         child: FutureBuilder(
             future: Future.wait([Future.delayed(const Duration(seconds: 1))]),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     // TODO: update
                     Text(companyID,
@@ -37,7 +38,7 @@ class CompanyInfoDialog extends StatelessWidget {
       ),
       actions: [
         TextButton(
-            onPressed: () => Navigator.pop(context), child: const Text("Tamam"))
+            onPressed: () => Navigator.pop(context), child: const Text("OK"))
       ],
     );
   }

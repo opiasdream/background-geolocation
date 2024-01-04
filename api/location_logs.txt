@@ -1,0 +1,25 @@
+
+
+*******  2024-01-04 22:46:48.617000+00:00 
+
+ {'location': {'extras': {}, 'mock': True, 'coords': {'speed_accuracy': -1, 'speed': -1, 'longitude': 28.978402, 'ellipsoidal_altitude': 0, 'floor': None, 'heading_accuracy': -1, 'latitude': 41.015941, 'accuracy': 5, 'altitude_accuracy': -1, 'altitude': 0, 'heading': -1}, 'is_moving': True, 'age': 238, 'odometer': 0, 'uuid': '38C28AB1-B024-4DD3-AD5D-B7BC3408E20C', 'event': 'motionchange', 'battery': {'level': -1, 'is_charging': False}, 'activity': {'type': 'unknown', 'confidence': 100}, 'timestamp': '2024-01-04T22:46:48.617Z'}}
+
+*******  2024-01-04 23:03:48.654000+00:00 
+
+ {'location': {'extras': {}, 'mock': True, 'coords': {'speed_accuracy': -1, 'speed': -1, 'longitude': 28.978402, 'ellipsoidal_altitude': 0, 'floor': None, 'heading_accuracy': -1, 'latitude': 41.015941, 'accuracy': 5, 'altitude_accuracy': -1, 'altitude': 0, 'heading': -1}, 'is_moving': True, 'age': 197, 'odometer': 0, 'uuid': '4AD8793A-E298-4325-817B-CCF1845E6149', 'event': 'motionchange', 'battery': {'level': -1, 'is_charging': False}, 'activity': {'type': 'unknown', 'confidence': 100}, 'timestamp': '2024-01-04T23:03:48.654Z'}}
+
+*******  2024-01-04 23:13:14.045000+00:00 
+
+ {'location': {'is_moving': True, 'uuid': '30f0bee3-a0e3-4964-8bf8-40df2ddd386f', 'timestamp': '2024-01-04T23:13:14.045Z', 'age': 89, 'odometer': 0, 'coords': {'latitude': 37.53869, 'longitude': -121.92665, 'accuracy': 20, 'speed': 95, 'speed_accuracy': -1, 'heading': 55, 'heading_accuracy': -1, 'altitude': 0, 'ellipsoidal_altitude': 0, 'altitude_accuracy': 40, 'age': 95}, 'activity': {'type': 'still', 'confidence': 100}, 'battery': {'is_charging': False, 'level': 1}, 'extras': {}}}
+
+*******  2024-01-04 23:13:14.259000+00:00 
+
+ {'location': {'event': 'providerchange', 'provider': {'network': True, 'gps': True, 'enabled': True, 'status': 3, 'accuracyAuthorization': 0, 'airplane': False}, 'is_moving': True, 'uuid': '95e5e006-f31e-4de3-8c9e-3158c37358b8', 'timestamp': '2024-01-04T23:13:14.259Z', 'age': 6, 'odometer': 0, 'coords': {'latitude': 37.5387176, 'longitude': -121.9265967, 'accuracy': 20, 'speed': 86.77, 'speed_accuracy': -1, 'heading': 56.79, 'heading_accuracy': -1, 'altitude': 0, 'ellipsoidal_altitude': 0, 'altitude_accuracy': 40, 'age': 8}, 'activity': {'type': 'still', 'confidence': 100}, 'battery': {'is_charging': False, 'level': 1}, 'extras': {}}}
+
+*******  2024-01-04 23:13:14.259000+00:00 
+
+ {'location': {'event': 'motionchange', 'is_moving': True, 'uuid': '3ea6a92f-8b40-40c1-b0cd-58ec362de997', 'timestamp': '2024-01-04T23:13:14.259Z', 'age': 16, 'odometer': 0, 'coords': {'latitude': 37.5387176, 'longitude': -121.9265967, 'accuracy': 20, 'speed': 86.77, 'speed_accuracy': -1, 'heading': 56.79, 'heading_accuracy': -1, 'altitude': 0, 'ellipsoidal_altitude': 0, 'altitude_accuracy': 40, 'age': 17}, 'activity': {'type': 'still', 'confidence': 100}, 'battery': {'is_charging': False, 'level': 1}, 'extras': {}}}
+
+*******  2024-01-04 23:18:14.181000+00:00 
+
+ {'location': {'event': 'motionchange', 'is_moving': False, 'uuid': '6d687d28-ef4f-49c3-9541-7cb9e4a005a0', 'timestamp': '2024-01-04T23:18:14.181Z', 'age': 996, 'odometer': 0, 'coords': {'latitude': 37.5387061, 'longitude': -121.9265921, 'accuracy': 20, 'speed': 5.14, 'speed_accuracy': -1, 'heading': 70.52, 'heading_accuracy': -1, 'altitude': 0, 'ellipsoidal_altitude': 0, 'altitude_accuracy': 40, 'age': 1103}, 'activity': {'type': 'still', 'confidence': 100}, 'battery': {'is_charging': False, 'level': 1}, 'extras': {}}}

@@ -35,7 +35,7 @@ mixin HomeScreenMixin on State<HomeScreen> {
             point: LatLng(element['latitude'], element['longitude']),
             child: IconButton(
               onPressed: () => CompanyInfoDialog.show(
-                  context: context, companyID: element['c-name']),
+                  context: context, companyID: element['companyID']),
               icon: const Icon(Icons.location_on),
             ),
           ),
