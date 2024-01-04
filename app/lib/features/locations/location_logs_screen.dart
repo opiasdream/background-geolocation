@@ -1,6 +1,9 @@
 import 'dart:async';
+import 'package:mobtest/common/widgets/loading_widget.dart';
 import 'package:mobtest/services/api/api_service.dart';
 import 'package:flutter/material.dart';
+
+part 'location_logs_screen_mixin.dart';
 
 class LocationLogsScreen extends StatefulWidget {
   const LocationLogsScreen({super.key});
@@ -14,40 +17,8 @@ class LocationLogsScreen extends StatefulWidget {
   }
 }
 
-class _LocationLogsScreenState extends State<LocationLogsScreen> {
-  final StreamController<String> streamController = StreamController<String>();
-  late Timer timer;
-
-  @override
-  void initState() {
-    fetchData();
-    timer = Timer.periodic(const Duration(seconds: 3), (timer) {
-      fetchData();
-    });
-
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    timer.cancel();
-    streamController.close();
-    super.dispose();
-  }
-
-  Future<void> fetchData() async {
-    try {
-      final response = await ApiService.fetchLocationLogs();
-      if (response.statusCode == 200) {
-        streamController.add(response.data.toString());
-      } else {
-        throw Exception('Failed to fetch data');
-      }
-    } catch (e) {
-      streamController.addError(e);
-    }
-  }
-
+class _LocationLogsScreenState extends State<LocationLogsScreen>
+    with LocationLogsScreenMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +28,7 @@ class _LocationLogsScreenState extends State<LocationLogsScreen> {
           stream: streamController.stream,
           builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const CircularProgressIndicator();
+              return const LoadingWidget();
             } else if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             } else if (!snapshot.hasData) {
