@@ -1,7 +1,7 @@
-from datetime import datetime
-from fastapi import FastAPI
-from fastapi.responses import StreamingResponse
 import json
+from fastapi import FastAPI
+from datetime import datetime
+from fastapi.responses import StreamingResponse
 
 app = FastAPI()
 
@@ -29,9 +29,3 @@ def getCompanyLocations():
         decoded_data = json.load(json_file)
 
     return decoded_data["locations"]
-
-
-# @app.get("/items/{item_id}")
-# def read_item(item_id: int, q: Union[str, None] = None):
-#     return {"item_id": item_id, "q": q}
-

@@ -2,6 +2,7 @@ import json
 from geopy.distance import geodesic
 
 try:
+    
     # start_location = (latitude, longitude).
     start_location = (41.015941, 28.9784021)
 
@@ -32,5 +33,6 @@ try:
     print("locations have been successfully created and saved in the file named 'locations.json'")
     
 except:
+    
     print("Error!")
 
