@@ -10,6 +10,11 @@ class LocationService {
   static void init() {
     bg.BackgroundGeolocation.ready(bg.Config(
             url: ApiConstants.addLocationUrl,
+            headers: {
+              "token": Platform.isAndroid
+                  ? "Android Client Custom Token"
+                  : "iOS Client Custom Token"
+            },
             notificationTitle: "Background tracking",
             desiredAccuracy: bg.Config.DESIRED_ACCURACY_HIGH,
             distanceFilter: 30.0,

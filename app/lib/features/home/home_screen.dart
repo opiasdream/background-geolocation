@@ -51,7 +51,11 @@ class _HomeScreenState extends State<HomeScreen> with HomeScreenMixin {
       options: mapOptions,
       children: [
         tileLayer,
-        CurrentLocationLayer(),
+        CurrentLocationLayer(
+            style: LocationMarkerStyle(
+          accuracyCircleColor: Colors.green.withOpacity(0.5),
+          showAccuracyCircle: true,
+        )),
         MarkerLayer(markers: markers),
       ],
     );
