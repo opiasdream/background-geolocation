@@ -1,0 +1,33 @@
+name: mobtest
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  mobtestpackage:
+    path: ../mobtestpackage
+  # location & map
+  background_fetch: ^1.2.1 # by flutter_background_geolocation
+  flutter_background_geolocation: ^4.13.5
+  latlong2: ^0.9.0
+  flutter_map: ^6.1.0
+  flutter_map_location_marker: ^8.0.3
+  # ui
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+    
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
