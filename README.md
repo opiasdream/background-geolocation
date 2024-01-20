@@ -1,5 +1,3 @@
-# mobtest
-
 flutter background location with FastAPI
 
 ### requirements
