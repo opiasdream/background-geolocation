@@ -1,7 +1,7 @@
+import 'package:mobtestpackage/services/api/api_service.dart';
 import 'package:mobtestpackage/widgets/company_info_dialog.dart';
 import 'package:mobtestpackage/widgets/loading_widget.dart';
 import 'package:mobtest/features/locations/location_logs_screen.dart';
-import 'package:mobtest/services/api/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
@@ -48,9 +48,9 @@ class _HomeScreenState extends State<HomeScreen> with HomeScreenMixin {
 
   FlutterMap mapWidget(List<Marker> markers) {
     return FlutterMap(
-      options: mapOptions,
+      options: MapOptions(initialCenter: initialLocation),
       children: [
-        tileLayer,
+        TileLayer(urlTemplate: tileLayerUrl),
         CurrentLocationLayer(
             style: LocationMarkerStyle(
           accuracyCircleColor: Colors.green.withOpacity(0.5),

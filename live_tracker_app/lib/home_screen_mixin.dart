@@ -3,41 +3,106 @@ part of 'home_screen.dart';
 mixin HomeScreenMixin on State<HomeScreen> {
   final screenTitle = "Live Tracking";
 
-  /// Map options.
-  final mapOptions = const MapOptions(
-    initialCenter: LatLng(41.015941, 28.9784021),
-    initialZoom: 9.2,
-  );
+  final initialLocation = const LatLng(41.015941, 28.9784021);
+  final tileLayerUrl = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
 
-  /// Tile layer for map.
-  final tileLayer =
-      TileLayer(urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png');
+  late Future<List> futureMarkers;
+  Stream<String?>? streamNotifications;
+  Stream<LocationMarkerPosition?>? streamClientLocation;
 
-  late Future<List<Marker>> futureCompaniesList;
+  ValueNotifier<bool> testClientIsAndroid = ValueNotifier<bool>(true);
+  ValueNotifier<String> lastLocation = ValueNotifier<String>("");
+  ValueNotifier<String> token = ValueNotifier<String>(TestTokens.androidToken);
 
   @override
   void initState() {
+    futureMarkers = getMarkers();
+    streamNotifications = _streamNotifications();
+    streamClientLocation = _streamClientLocation();
+
+    testClientIsAndroid.addListener(() {
+      token.value = testClientIsAndroid.value
+          ? TestTokens.androidToken
+          : TestTokens.iosToken;
+    });
     super.initState();
-    futureCompaniesList = fetchData();
   }
 
-  Future<List<Marker>> fetchData() async {
-    List<Marker> aa = [];
-    var response = await ApiService.fetchCompanyLocations();
+  @override
+  void dispose() {
+    screenTitle;
+    futureMarkers;
+    streamClientLocation;
+    testClientIsAndroid.dispose();
+    lastLocation.dispose();
+    token.dispose();
+    super.dispose();
+  }
 
-    if (response.statusCode == 200) {
-      var data = response.data as List;
+  Future<List> getMarkers() async {
+    List<Marker> companies = [];
+    List<CircleMarker> circles = [];
+    try {
+      var response = await ApiService.fetchCompanyLocations();
 
-      for (var element in data) {
-        aa.add(
-          Marker(
-            rotate: true,
-            point: LatLng(element['latitude'], element['longitude']),
-            child: Icon(Icons.location_on),
-          ),
-        );
+      if (response.statusCode == 200) {
+        var data = response.data as List;
+
+        for (var element in data) {
+          companies.add(
+            Marker(
+              point: LatLng(element['latitude'], element['longitude']),
+              child: const Icon(Icons.location_on),
+            ),
+          );
+          circles.add(
+            CircleMarker(
+              point: LatLng(element['latitude'], element['longitude']),
+              borderColor: Colors.blue,
+              color: Colors.blue.withOpacity(.2),
+              useRadiusInMeter: true,
+              radius: 1000,
+            ),
+          );
+        }
       }
+    } catch (e) {
+      rethrow;
     }
-    return aa;
+    return [companies, circles];
+  }
+
+  Stream<String?>? _streamNotifications() async* {
+    while (true) {
+      var response = await ApiService.fetchNotificationLogs();
+
+      yield response.data.toString();
+
+      await Future.delayed(const Duration(seconds: 1));
+    }
+  }
+
+  Stream<LocationMarkerPosition?>? _streamClientLocation() async* {
+    LocationMarkerPosition? position;
+
+    while (true) {
+      var response = await ApiService.clientStreamLocation(token.value);
+
+      Map<String, dynamic> json = jsonDecode(response.data);
+
+      Map data = json["location"]["coords"];
+
+      position = LocationMarkerPosition(
+        latitude: double.parse(data['latitude'].toString()),
+        longitude: double.parse(data['longitude'].toString()),
+        accuracy: double.parse(data['accuracy'].toString()),
+      );
+
+      lastLocation.value = '${token.value} *** $position';
+
+      yield position;
+
+      await Future.delayed(const Duration(seconds: 1));
+    }
   }
 }

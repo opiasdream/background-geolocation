@@ -1,0 +1,34 @@
+{
+    "token": "iosCustomToken",
+    "time": "2024-01-21 03:04:22.548000+00:00",
+    "location": {
+        "extras": {},
+        "mock": true,
+        "coords": {
+            "speed_accuracy": 0,
+            "speed": 26.5,
+            "longitude": -122.40588589,
+            "ellipsoidal_altitude": 0,
+            "floor": 0,
+            "heading_accuracy": 0,
+            "latitude": 37.76191539,
+            "accuracy": 5,
+            "altitude_accuracy": -1,
+            "altitude": 0,
+            "heading": 24.61
+        },
+        "is_moving": true,
+        "age": 4,
+        "odometer": 11270309.9,
+        "uuid": "AA87979C-1A39-467A-8B0D-22DD010117F2",
+        "activity": {
+            "type": "unknown",
+            "confidence": 100
+        },
+        "battery": {
+            "level": -1,
+            "is_charging": false
+        },
+        "timestamp": "2024-01-21T03:04:22.548Z"
+    }
+}

@@ -3,15 +3,8 @@ part of 'home_screen.dart';
 mixin HomeScreenMixin on State<HomeScreen> {
   final screenTitle = "Home Screen";
 
-  /// Map options.
-  final mapOptions = const MapOptions(
-    initialCenter: LatLng(41.015941, 28.9784021),
-    initialZoom: 9.2,
-  );
-
-  /// Tile layer for map.
-  final tileLayer =
-      TileLayer(urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png');
+  final initialLocation = const LatLng(41.015941, 28.9784021);
+  final tileLayerUrl = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
 
   late Future<List<Marker>> futureCompaniesList;
 

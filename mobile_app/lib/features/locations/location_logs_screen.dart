@@ -1,6 +1,6 @@
 import 'dart:async';
+import 'package:mobtestpackage/services/api/api_service.dart';
 import 'package:mobtestpackage/widgets/loading_widget.dart';
-import 'package:mobtest/services/api/api_service.dart';
 import 'package:flutter/material.dart';
 
 part 'location_logs_screen_mixin.dart';

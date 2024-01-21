@@ -1,8 +1,9 @@
 import 'dart:io';
 
-import 'package:mobtest/services/api/api_constanst.dart';
 import 'package:flutter_background_geolocation/flutter_background_geolocation.dart'
     as bg;
+import 'package:mobtestpackage/constants/test_tokens.dart';
+import 'package:mobtestpackage/services/api/api_constanst.dart';
 
 class LocationService {
   LocationService._();
@@ -12,8 +13,8 @@ class LocationService {
             url: ApiConstants.addLocationUrl,
             headers: {
               "token": Platform.isAndroid
-                  ? "Android Client Custom Token"
-                  : "iOS Client Custom Token"
+                  ? TestTokens.androidToken
+                  : TestTokens.iosToken
             },
             notificationTitle: "Background tracking",
             desiredAccuracy: bg.Config.DESIRED_ACCURACY_HIGH,

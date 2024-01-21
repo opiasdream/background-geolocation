@@ -15,4 +15,15 @@ class ApiService {
   static Future<Response> fetchCompanyLocations() async {
     return await _dio.get(ApiConstants.companyLocationUrl);
   }
+
+  /// Fetch all notification logs.
+  static Future<Response> fetchNotificationLogs() async {
+    return await _dio.get(ApiConstants.notificatioLogsUrl);
+  }
+
+  /// Fetch client last location.
+  static Future<Response> clientStreamLocation(String token) async {
+    return await _dio.get(ApiConstants.clientLastLocationUrl,
+        options: Options(headers: {"token": token}));
+  }
 }

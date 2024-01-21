@@ -1,0 +1,68 @@
+{
+    // Olası öznitelikler hakkında bilgi edinmek için IntelliSense kullanın.
+    // Mevcut özniteliklerin açıklamalarını görüntülemek için üzerine gelin.
+    // Daha fazla bilgi için şu adresi ziyaret edin: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "live_tracker_app",
+            "cwd": "live_tracker_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "live_tracker_app (profile mode)",
+            "cwd": "live_tracker_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "live_tracker_app (release mode)",
+            "cwd": "live_tracker_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "mobile_app",
+            "cwd": "mobile_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "mobile_app (profile mode)",
+            "cwd": "mobile_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "mobile_app (release mode)",
+            "cwd": "mobile_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "mobtestpackage",
+            "cwd": "mobtestpackage",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "mobtestpackage (profile mode)",
+            "cwd": "mobtestpackage",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "mobtestpackage (release mode)",
+            "cwd": "mobtestpackage",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
