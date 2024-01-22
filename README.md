@@ -19,7 +19,7 @@ flutter background geo-location with FastAPI
 or
 ```
 % cd local_api
-uvicorn main:app  --reload --host 127.0.0.1 --port 8000
+% uvicorn main:app  --reload --host 127.0.0.1 --port 8000
 ```
 
 #### mobile_app
