@@ -30,7 +30,6 @@ switch to another terminal and then..
 #### live_tracker_app
 to avoid errors in cors operations:
 ```
-% cd ..
 % cd live_tracker_app 
 % dart pub global activate flutter_cors 
 % fluttercors --disable
